@@ -14,10 +14,10 @@ import presettings
 
 
 class DownLinkAdmin(admin.ModelAdmin):
-    def queryset(self, request):
+    def get_queryset(self, request):
         """catch the request object for list pages"""
         self.request = request
-        return super(DownLinkAdmin, self).queryset(request)
+        return super(DownLinkAdmin, self).get_queryset(request)
 
     list_display = ('slug', 'active', 'file', 'valid', 'clicks',
                     'timestamp_creation', 'link')
