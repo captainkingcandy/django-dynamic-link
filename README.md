@@ -15,10 +15,10 @@ Django file streaming application to provide download links without showing the 
 
 # Features
 
-
-   .. * Link expires by clicks (optional)
-   .. * Link expires by time (optional)
-   .. * Is usable for counting clicks
+<ul>
+   <li>Link expires by clicks (optional)</li>
+   <li>Link expires by time (optional)</li>
+   <li>Is usable for counting clicks</li>
 
 
 # Installation
