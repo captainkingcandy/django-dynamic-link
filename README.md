@@ -1,4 +1,4 @@
-#Description
+# Description
 
 Django file streaming application to provide download links without showing the real path to the served file. The links can be set to expire by date or by clicks. It is also possible to use it for counting clicks on a download link.
 
@@ -12,7 +12,7 @@ Django file streaming application to provide download links without showing the 
     * Example project is included (configured for Django 1.4)
 
 
-#Features
+# Features
 
 
    .. * Link expires by clicks (optional)
@@ -20,7 +20,7 @@ Django file streaming application to provide download links without showing the 
    .. * Is usable for counting clicks
 
 
-#Installation
+# Installation
 
 
 **Dependences**
@@ -85,7 +85,7 @@ Django file streaming application to provide download links without showing the 
         >>> exit()
     
 
-#Setup
+# Setup
 
     
     ..* Add "dynamicLink" to you installed apps in the settings file.
@@ -122,7 +122,7 @@ Django file streaming application to provide download links without showing the 
         - Example: www.example.com/DYNAMIC_LINK_URL_BASE_COMPONENT/link/3839hd8HKl3/example.zip.
 
 
-#Usage
+# Usage
 
 
 Open the admin interface and go to "Dynamiclink" section. The rest should be self-explanatory.
@@ -136,7 +136,7 @@ Open the admin interface and go to "Dynamiclink" section. The rest should be sel
     ..* The filename from the created links are only for human readability. You can delete or change these filenames in any way you want.
 
 
-#Example project
+# Example project
 
 
 djang-dynamic-links ships with an example proect.
