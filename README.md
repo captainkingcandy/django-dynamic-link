@@ -31,6 +31,7 @@ Django file streaming application to provide download links without showing the 
     <li>Django itself, its redirects from django.contrib and its locale middleware.</li>
 </ul>
 
+
 **Installation**
 
     *Installation with pip (recommended)*
@@ -39,7 +40,7 @@ Django file streaming application to provide download links without showing the 
         If you havn't pip on your system then install setuptools first after that run "easy_install pip".
         After that you can use pip in your terminal window.*
 
-<ul>
+        <ul>
         <li>Use the stable release (recommended)::</li>
 
                 pip install django-dynamic-link
