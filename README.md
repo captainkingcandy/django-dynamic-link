@@ -8,9 +8,10 @@ Django file streaming application to provide download links without showing the 
 
 **Notes**
 
-    * Tested with Django 1.2 / 1.3 / 1.4
-    * Example project is included (configured for Django 1.4)
-
+<ul>
+    <li>Tested with Django 1.2 / 1.3 / 1.4</li>
+    <li>Example project is included (configured for Django 1.4)</li>
+</ul>
 
 # Features
 
@@ -25,8 +26,10 @@ Django file streaming application to provide download links without showing the 
 
 **Dependences**
 
-    ..* This app
-    ..* Django itself, its redirects from django.contrib and its locale middleware.
+<ul>
+    <li>This app</li>
+    <li>Django itself, its redirects from django.contrib and its locale middleware.</li>
+</ul>
 
 **Installation**
 
@@ -36,15 +39,16 @@ Django file streaming application to provide download links without showing the 
         If you havn't pip on your system then install setuptools first after that run "easy_install pip".
         After that you can use pip in your terminal window.*
 
-        ..* Use the stable release (recommended)::
+<ul>
+        <li>Use the stable release (recommended)::</li>
 
                 pip install django-dynamic-link
 
-        ..* Or the development version::
+        <li>Or the development version::</li>
 
                 pip install -e hg+https://bitbucket.org/catapela/django-dynamic-link/#egg=django-dynamic-link
 
-        ..* With pip you can also uninstall::
+        <li>With pip you can also uninstall</li>
 
             pip uninstall django-dynamic-link
 
@@ -54,13 +58,13 @@ Django file streaming application to provide download links without showing the 
 
 .. _here: http://pypi.python.org/pypi/django-dynamic-link/#downloads
 
-        ..* Either copy the sources in your project root
+        <li>Either copy the sources in your project root</li>
 
             1. Unpack your package.
             2. Copy the folder "dynamic_link" in your project root.
             3. Make sure all package dependences are fulfilled.
 
-        ..* Or use setup.py
+        <li>Or use setup.py</li>
 
             1. Unpack your package.
             2. Open a terminal and change to the folder which contains the setup.py and type
@@ -83,25 +87,25 @@ Django file streaming application to provide download links without showing the 
         >>> dynamicLInk.REQUIRES
         >>> help(dynamicLink)
         >>> exit()
-    
+</ul>    
 
 # Setup
 
-    
-    ..* Add "dynamicLink" to you installed apps in the settings file.
-    ..* Make sure that:
+    <ul>
+    <li>Add "dynamicLink" to you installed apps in the settings file.</li>
+    <li>Make sure that:</li>
 
         1.   'django.middleware.locale.LocaleMiddleware', is in your MIDDLEWARE_CLASSES.
         2.   Your Admin is enabled ('django.contrib.admin', is in your INSTALLED_APPS).
         3.   'django.contrib.auth.context_processors.auth', (also for admin) is in TEMPLATE_CONTEXT_PROCESSORS.
         4.   'django.core.context_processors.request', is in TEMPLATE_CONTEXT_PROCESSORS.
 
-    ..* Add the following to your urls.py:
+    <li>Add the following to your urls.py:</li>
 
         1.   from dynamicLink import presettings
         2.   (r'^\w+/%s/' % presettings.DYNAMIC_LINK_URL_BASE_COMPONENT, include('dynamicLink.urls')),
         
-    ..* Finally run::
+    <li>Finally run::</li>
     
         python manage.py syncdb
         python manage.py runserver
@@ -120,7 +124,7 @@ Django file streaming application to provide download links without showing the 
         - Default: 'serve'
         - A string that modifies your url serve path.
         - Example: www.example.com/DYNAMIC_LINK_URL_BASE_COMPONENT/link/3839hd8HKl3/example.zip.
-
+</ul>
 
 # Usage
 
@@ -128,12 +132,12 @@ Django file streaming application to provide download links without showing the 
 Open the admin interface and go to "Dynamiclink" section. The rest should be self-explanatory.
 
 **Hints**
-
-    ..* Zero value for link age means never expires.
-    ..* Zero value for clicks means unlimited clicks.
-    ..* If a link never expires you can use it for click counting.
-    ..* Trough the action menu you can serve a site with several links. 
-    ..* The filename from the created links are only for human readability. You can delete or change these filenames in any way you want.
+<ul>
+    <li>Zero value for link age means never expires.</li>
+    <li>Zero value for clicks means unlimited clicks.</li>
+    <li>If a link never expires you can use it for click counting.</li>
+    <li>Trough the action menu you can serve a site with several links.</li> 
+    <li>The filename from the created links are only for human readability. You can delete or change these filenames in any way you want.</li>
 
 
 # Example project
