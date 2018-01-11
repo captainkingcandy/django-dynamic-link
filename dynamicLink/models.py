@@ -9,7 +9,7 @@ __licence__ = "New BSD Licence"
 
 import presettings
 from django.db import models
-import settings
+from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 import random
 import os
