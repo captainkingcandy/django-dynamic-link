@@ -9,7 +9,7 @@ __licence__ = """New BSD Licence"""
 import os
 import presettings
 from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 import mimetypes
 from django.views.decorators.cache import cache_control
@@ -62,11 +62,11 @@ def site(request, offset):
                      'basepath': presettings.DYNAMIC_LINK_URL_BASE_COMPONENT,
                      'downloads': obj
                      }
-    return render_to_response(
-                              template,
-                              extra_context,
-                              context_instance=RequestContext(request)
-                              )
+    return render(
+                 request,
+                 template,
+                 extra_context
+                 )
 
 
 def fetch(request, offset):
@@ -148,7 +148,7 @@ def provide(request, key):
         auto_mimetype = 'application/octet-stream'
 
     # response object
-    response = HttpResponse(fsocket, mimetype=auto_mimetype)  # object instance
+    response = HttpResponse(fsocket, content_type=auto_mimetype)  # object instance
     # with mimetype and file
 
     # set headers in the response object
