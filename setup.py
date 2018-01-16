@@ -11,7 +11,7 @@ import shutil
 
 
 # Read the version from a project file
-VERSION = version.VERSION_str
+#VERSION = version.VERSION_str
 
 # Get description from Readme file
 readme_file = os.path.join(os.path.dirname(__file__), 'README.rst')
