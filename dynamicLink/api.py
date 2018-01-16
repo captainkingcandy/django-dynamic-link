@@ -2,8 +2,8 @@
 # -*- coding:utf-8 -*-
 # This Python file uses the following encoding: utf-8
 
-from models import Download
-import presettings
+from .models import Download
+from .presettings import DYNAMIC_LINK_URL_BASE_COMPONENT
 
 
 def file_link_url(request, linkobject, langcode='lg'):
@@ -12,7 +12,7 @@ def file_link_url(request, linkobject, langcode='lg'):
                                   'http://',
                                   request.META.get('HTTP_HOST'),
                                   langcode,
-                                  presettings.DYNAMIC_LINK_URL_BASE_COMPONENT,
+                                  DYNAMIC_LINK_URL_BASE_COMPONENT,
                                   linkobject.link_key,
                                   linkobject.get_filename()
                                       )
@@ -64,6 +64,6 @@ class DownloadSiteUrl():
                                    'http://',
                                    request.META.get('HTTP_HOST'),
                                    langcode,
-                                   presettings.DYNAMIC_LINK_URL_BASE_COMPONENT,
+                                   DYNAMIC_LINK_URL_BASE_COMPONENT,
                                    '-'.join(self.keys)
                                        )

@@ -7,7 +7,7 @@ __copyright__ = "Copyright (c) " + "28.08.2010" + " Andreas Fritz"
 __licence__ = "New BSD Licence"
 
 
-import presettings
+from .presettings import DYNAMIC_LINK_MEDIA, TEXT_REQUEST_IS_EXPIRED
 from django.db import models
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
@@ -32,7 +32,7 @@ class Download(models.Model):
                                  verbose_name=_(u'is aktive'),
                                  )
     file_path = models.FilePathField(
-                                  path=presettings.DYNAMIC_LINK_MEDIA,
+                                  path=DYNAMIC_LINK_MEDIA,
                                   help_text=_(u"Select the content your like \
                                   to provide."),
                                   verbose_name=_(u'content to serve'),
@@ -91,7 +91,7 @@ class Download(models.Model):
         """Is shown at the admit list display"""
         if self.timeout_hours == 0:
             return '<span style="color: #FF7F00; ">%s</span>' \
-                % unicode(_(u'never expires'))
+                % str(_(u'never expires'))
         return (self.timestamp_creation + \
                 datetime.timedelta(hours=self.timeout_hours)) - timezone.now()
 
@@ -167,8 +167,8 @@ class Download(models.Model):
 
     def __unicode__(self):
         return '%s: %s, %s: %s' % (
-                                   unicode(_(u'Slug')),
-                                   self.slug, unicode(_(u'Filename')),
+                                   str(_(u'Slug')),
+                                   self.slug, str(_(u'Filename')),
                                    self.get_filename()
                                    )
 
@@ -176,7 +176,7 @@ class Download(models.Model):
 class IsExpiredError(Exception):
     """Error class for expired link objects"""
     def __init__(self, value=''):
-        self.value = presettings.TEXT_REQUEST_IS_EXPIRED + value
+        self.value = TEXT_REQUEST_IS_EXPIRED + value
 
     def __str__(self):
         return repr(self.value)

@@ -7,14 +7,14 @@ __copyright__ = "Copyright (c) " + "28.08.2010" + " Andreas Fritz"
 __licence__ = """New BSD Licence"""
 
 import os
-import presettings
+from .presettings import DYNAMIC_LINK_URL_BASE_COMPONENT, TEXT_REQUEST_IS_EXPIRED, TEXT_REQUEST_DOES_NOT_EXIST, DYNAMIC_LINK_MEDIA
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 from django.template import RequestContext
 import mimetypes
 from django.views.decorators.cache import cache_control
 from django.utils.translation import ugettext_lazy as _
-from models import Download, IsExpiredError
+from .models import Download, IsExpiredError
 
 
 def expired(key):
@@ -59,7 +59,7 @@ def site(request, offset):
 
     template = 'dynamicLink/provide.html'
     extra_context = {
-                     'basepath': presettings.DYNAMIC_LINK_URL_BASE_COMPONENT,
+                     'basepath': DYNAMIC_LINK_URL_BASE_COMPONENT,
                      'downloads': obj
                      }
     return render(
@@ -74,9 +74,9 @@ def fetch(request, offset):
     if active(offset):
         return provide(request, offset)
     elif expired(offset):
-        return error(request, presettings.TEXT_REQUEST_IS_EXPIRED)
+        return error(request, TEXT_REQUEST_IS_EXPIRED)
     else:
-        return error(request, presettings.TEXT_REQUEST_DOES_NOT_EXIST)
+        return error(request, TEXT_REQUEST_DOES_NOT_EXIST)
 
 
 @cache_control(private=True)
@@ -110,11 +110,11 @@ def provide(request, key):
         return error(request)
 
     # make file path suitable for different installations
-    delimiter = presettings.DYNAMIC_LINK_MEDIA.strip('/').split('/')[-1]
+    delimiter = DYNAMIC_LINK_MEDIA.strip('/').split('/')[-1]
     # now we use the objects get_paht() method to be sure
     # the object instance keep up to date.
     file_path = os.path.normpath(
-        presettings.DYNAMIC_LINK_MEDIA + '/' + filepath.split(delimiter)[-1]
+        DYNAMIC_LINK_MEDIA + '/' + filepath.split(delimiter)[-1]
                                 )
 
     # read file as binary
