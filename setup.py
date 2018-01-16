@@ -3,7 +3,8 @@
 # This Python file uses the following encoding: utf-8
 
 from setuptools import setup, find_packages
-from dynamicLink import version
+#from dynamicLink import version
+#from .version import __version__
 import os
 # import sys
 import shutil
@@ -38,7 +39,7 @@ except ImportError:
 
 
 setup(name='django-dynamic-link',
-        version=VERSION,
+        version=dynamicLink.__version__,
         description='A django file streaming application',
         long_description=long_description,
         author='Andreas Fritz, digital.elements.li',
