@@ -4,7 +4,7 @@
 
 from setuptools import setup, find_packages
 #from dynamicLink import version
-import dynamicLink
+#import dynamicLink
 import os
 # import sys
 import shutil
@@ -39,7 +39,7 @@ except ImportError:
 
 
 setup(name='django-dynamic-link',
-        version=dynamicLink.__version__,
+        version='0.5.8',
         description='A django file streaming application',
         long_description=long_description,
         author='Andreas Fritz, digital.elements.li',
