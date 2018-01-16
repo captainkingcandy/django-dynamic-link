@@ -1,4 +1,4 @@
-import version
+#import version
 import os
 import django
 import sys
@@ -7,9 +7,9 @@ __author__ = "Andreas Fritz - sources.e-blue.eu"
 __copyright__ = "Copyright (c) " + "28.08.2010" + " Andreas Fritz"
 __licence__ = """New BSD Licence"""
 
-__version__ = VERSION = version.VERSION
-RELEASE_DJANGO = version.RELEASE_DJANGO
-REQUIRES = version.REQUIRES
+__version__ = VERSION = '0.5.8'
+RELEASE_DJANGO = '1.11.7'
+REQUIRES = '1.11.7'
 
 try:
     __doc__ = open(
@@ -27,15 +27,15 @@ def CKINST():
     print('I try to find errors for you!')
 
     djv = django.VERSION[:2]
-    greatest_dlv = version.RELEASE_DJANGO[0]
-    smalest_dlv = version.RELEASE_DJANGO[0]
+    greatest_dlv = RELEASE_DJANGO[0]
+    smalest_dlv = RELEASE_DJANGO[0]
 
     def strform(val):
         """returns formated version tuples"""
         return str(val).strip('()').replace(' ', '').replace(',', '.')
 
     # find greatest and smallest possible django version for dynamic link
-    for dlv in version.RELEASE_DJANGO:
+    for dlv in RELEASE_DJANGO:
         if greatest_dlv < dlv:
             greatest_dlv = dlv
         if smalest_dlv > dlv:
