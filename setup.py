@@ -5,14 +5,14 @@
 from setuptools import setup, find_packages
 #from dynamicLink import version
 #from .version import __version__
-import dynamicLink
+from ._version import __version__ as version
 import os
 # import sys
 import shutil
 
 
 # Read the version from a project file
-#VERSION = version.VERSION_str
+VERSION = version.VERSION_str
 
 # Get description from Readme file
 readme_file = os.path.join(os.path.dirname(__file__), 'README.rst')
@@ -40,7 +40,7 @@ except ImportError:
 
 
 setup(name='django-dynamic-link',
-        version=dynamicLink.__version__,
+        version=VERSION,
         description='A django file streaming application',
         long_description=long_description,
         author='Andreas Fritz, digital.elements.li',
