@@ -157,7 +157,9 @@ def provide(request, key):
     # encode('utf-8') assuming you're running on a server with UTF-8 as
     # the file system encoding.
     response['Content-Disposition'] = 'attachment; filename=%s' \
-            % file_name.encode('utf-8')  # add correct filename
+            % file_name  # add correct filename
+
+# for python2 put above " % file_name.encode('utf-8')"
 
     if auto_encoding and auto_encoding is not 'gzip':
         # set encoding but exclude gzip from encoding headers
