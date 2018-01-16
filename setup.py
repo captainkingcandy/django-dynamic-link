@@ -5,6 +5,7 @@
 from setuptools import setup, find_packages
 #from dynamicLink import version
 #from .version import __version__
+import dynamicLink
 import os
 # import sys
 import shutil
