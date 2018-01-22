@@ -37,10 +37,10 @@ def error(request, text=_(u'Sorry, your request is not available')):
     """returns the error page"""
     extra_context = {'message': text}
     template = 'dynamicLink/not_avallible.html'
-    return rende(
-                request, template,
-                extra_context
-                )
+    return render(
+                 request, template,
+                 extra_context
+                 )
 
 
 def site(request, offset):
